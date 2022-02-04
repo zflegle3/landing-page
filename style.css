@@ -1,0 +1,80 @@
+/*|| Overall Styles */
+
+html {
+    box-sizing: border-box;
+    font-family: 'Dongle', sans-serif;
+    font-size: 10px;
+}
+
+/*|| Body Styles */
+body {
+    display: flex;
+}
+
+
+/*|| Header Styles General */
+header {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0 20% 0 20%;
+    background-color: #1F2937;
+    color: white;
+}
+
+div {
+    display: flex;
+    flex: 1 1 auto;
+}
+
+nav, h2 {
+    display: flex;
+    flex: 1 1 auto;
+}
+
+ul.nav {
+    display: flex;
+    flex-direction: row;
+    flex: 1 1 auto;
+}
+
+li.nav {
+    display: flex;
+    flex: 1 1 auto;
+    align-items: center;
+    align-content: space-between;
+}
+
+/*|| Header Styles Upper */
+
+.top, .bottom {
+    padding: 0 0 100px 0;
+}
+
+/*|| Header Styles lower */
+
+.content {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    width: 100%;
+}
+
+
+/*Font Styles */
+h1 {
+    font-size: 4.8rem;
+}
+
+h2 {
+    font-size: 2.4rem;
+}
+
+p, li {
+    font-size: 1.8rem;
+}
+
+
+
+
+
