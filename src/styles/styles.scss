@@ -51,11 +51,14 @@ $red-main: hsl(0, 94%, 66%);
 $blue-sub-a: hsl(229, 8%, 60%);
 $blue-sub-b: hsl(229, 31%, 21%);
 
-$blue-sub-sh: rgba(37, 43, 70,0.90);
+$blue-sub-a-sh: rgba(145, 148, 161,0.40);
+$blue-sub-b-sh: rgba(37, 43, 70,0.90);
+
 
 
 * {
     font-family: 'Rubik', sans-serif;
+    box-sizing: border-box;
 }
 
 .nav-modal {
@@ -64,7 +67,26 @@ $blue-sub-sh: rgba(37, 43, 70,0.90);
     left: 0px;
     width: 100vw;
     height: 100vh;
-    background-color: $blue-sub-sh;
+    background-color: $blue-sub-b-sh;
+
+    display: flex;
+    flex-direction: column;
+    padding: 4rem 2.5rem;
+
+    .modal-header {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid $blue-sub-a-sh;
+        padding-bottom: 4rem;
+
+        button {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+        }
+    }
 
     svg {
         g path {
@@ -77,6 +99,46 @@ $blue-sub-sh: rgba(37, 43, 70,0.90);
             path {
                 fill: $blue-sub-b
             }
+        }
+    }
+
+    .modal-links {
+        flex-grow: 1;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+
+
+        p { 
+            width: 100%;
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 400;
+            letter-spacing: 0.2rem;
+            color: $bg-main;
+            padding: 2.25rem 0rem;
+            border-bottom: 1px solid $blue-sub-a-sh;
+            cursor: pointer;
+        }
+
+        p.selected {
+            margin: 2.25rem 0rem;
+            padding: 1.25rem;
+            border: 2px solid $bg-main;
+            border-radius: 0.5rem;
+        }
+    }
+
+    .modal-footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        svg {
+            fill: #ffffff;
+            margin: 2rem;
         }
     }
 }
