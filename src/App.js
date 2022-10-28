@@ -1,7 +1,8 @@
 
 import "./styles/styles.scss";
 import Nav from "./components/Nav";
-import SectionMain from "./components/SectionMain";
+import SectionRight from "./components/SectionRight";
+import SectionLeft from "./components/SectionLeft";
 
 function App() {
 
@@ -13,7 +14,8 @@ function App() {
   return (
     <div className="App">
       <Nav />
-      <SectionMain />
+      <SectionRight />
+      <SectionLeft />
     </div>
   );
 }

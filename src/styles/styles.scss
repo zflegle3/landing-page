@@ -191,11 +191,20 @@ header.hide {
             font-weight: 500;
             text-align: center;
             line-height: 3.6rem;
-            padding: 1rem 3rem;
+            padding: 1rem 2rem;
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            color: $blue-sub-b;
+            font-weight: 500;
+            text-align: center;
+            line-height: 3.6rem;
+            padding: 1rem 2rem;
         }
 
         p {
-            padding: 1.5rem 4.5rem;
+            padding: 1.5rem 4rem;
             font-size: 1.5rem;
             font-weight: 400;
             line-height: 2.5rem;
@@ -239,7 +248,7 @@ header.hide {
             height: 50;
         }
 
-        .svg-hero {
+        .svg-hero-a {
             width: 100%;
             height: 100%;
             position: absolute;
@@ -255,6 +264,23 @@ header.hide {
             z-index: 1;
         }
 
+        .svg-hero-b {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0rem;
+            left: 0rem;
+            background-image: url("../images//illustration-features-tab-1.svg");
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+            width: 100%;
+            height: 0;
+            padding-top: 66.64%;
+            z-index: 1;
+            transform: scale(0.85);
+        }
+
         .background-right {
             z-index: 0;
             position: absolute;
@@ -264,7 +290,17 @@ header.hide {
             left: 20%;
             background-color: $blue-main;
             border-radius: 1000rem;
+        }
 
+        .background-left {
+            z-index: 0;
+            position: absolute;
+            bottom: 0rem;
+            width: 150vw;
+            height: 75%;
+            right: 20%;
+            background-color: $blue-main;
+            border-radius: 1000rem;
         }
     }
 }

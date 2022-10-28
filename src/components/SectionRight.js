@@ -18,7 +18,7 @@ function SectionRight() {
         </div>
         <div className="container-sub-b">
             {/* <ContentSvg/> */}
-            <div className="svg-hero"></div>
+            <div className="svg-hero-a"></div>
             <div className="background-right"></div>
         </div>
       </div>
