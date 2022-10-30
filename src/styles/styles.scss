@@ -64,7 +64,7 @@ $blue-sub-b-sh: rgba(37, 43, 70,0.90);
 }
 
 .nav-modal {
-    position: absolute;
+    position: fixed;
     top: 0px;
     left: 0px;
     width: 100vw;
@@ -177,130 +177,188 @@ header.hide {
     flex-direction: column-reverse;
     width: 100vw;
     padding: 2.5rem 0rem;
+}
 
-    .container-sub-a {
-        padding: 5rem 0rem;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
 
-        h1 {
-            font-size: 2.8rem;
-            color: $blue-sub-b;
-            font-weight: 500;
-            text-align: center;
-            line-height: 3.6rem;
-            padding: 1rem 2rem;
-        }
+// Reused Text Container
+.container-sub-a {
+    padding: 5rem 0rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 
-        h2 {
-            font-size: 2.2rem;
-            color: $blue-sub-b;
-            font-weight: 500;
-            text-align: center;
-            line-height: 3.6rem;
-            padding: 1rem 2rem;
-        }
-
-        p {
-            padding: 1.5rem 4rem;
-            font-size: 1.5rem;
-            font-weight: 400;
-            line-height: 2.5rem;
-            color: $blue-sub-a;
-            text-align: center;
-        }
-        
-        button {
-            border: none;
-            font-size: 1.5rem;
-            // letter-spacing: 0.1rem;
-            border-radius: 0.5rem;
-            padding: 1.5rem;
-            margin: 0.5rem;
-            box-shadow: 0rem 0.5rem 5rem $blue-sub-a-sh;
-        }
-
-        .btn-a {
-            background-color: $blue-main;
-            color: $bg-main;
-        }
-
-        .btn-b {
-            background-color: $bg-main;
-            color: $blue-sub-a;
-        }
-
+    h1 {
+        font-size: 2.8rem;
+        color: $blue-sub-b;
+        font-weight: 500;
+        text-align: center;
+        line-height: 3.6rem;
+        padding: 1rem 2rem;
     }
 
-    .container-sub-b {
-        position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+    h2 {
+        font-size: 2.2rem;
+        color: $blue-sub-b;
+        font-weight: 500;
+        text-align: center;
+        line-height: 3.6rem;
+        padding: 1rem 2rem;
+    }
+
+    p {
+        padding: 1.5rem 4rem;
+        font-size: 1.5rem;
+        font-weight: 400;
+        line-height: 2.5rem;
+        color: $blue-sub-a;
+        text-align: center;
+    }
+    
+    button {
+        border: none;
+        font-size: 1.5rem;
+        // letter-spacing: 0.1rem;
+        border-radius: 0.5rem;
+        padding: 1.5rem;
+        margin: 0.5rem;
+        box-shadow: 0rem 0.5rem 5rem $blue-sub-a-sh;
+    }
+
+    .btn-a {
+        background-color: $blue-main;
+        color: $bg-main;
+    }
+
+    .btn-b {
+        background-color: $bg-main;
+        color: $blue-sub-a;
+    }
+
+}
+
+// Reused Image Container
+.container-sub-b {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 0;
+    padding-top: 66.64%;
+    overflow: hidden;
+
+    .background-right {
+        height: 50;
+    }
+
+    .svg-hero-a { //Right background
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0rem;
+        left: 0rem;
+        background-image: url("../images//illustration-hero.svg");
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
         width: 100%;
         height: 0;
         padding-top: 66.64%;
-        overflow: hidden;
+        z-index: 1;
+    }
 
-        .background-right {
-            height: 50;
+    .svg-hero-b { //Left background
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0rem;
+        left: 0rem;
+        background-image: url("../images//illustration-features-tab-1.svg");
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 0;
+        padding-top: 66.64%;
+        z-index: 1;
+        transform: scale(0.85);
+    }
+
+    .background-right {
+        z-index: 0;
+        position: absolute;
+        bottom: 0rem;
+        width: 150vw;
+        height: 75%;
+        left: 20%;
+        background-color: $blue-main;
+        border-radius: 1000rem;
+    }
+
+    .background-left {
+        z-index: 0;
+        position: absolute;
+        bottom: 0rem;
+        width: 150vw;
+        height: 75%;
+        right: 20%;
+        background-color: $blue-main;
+        border-radius: 1000rem;
+    }
+}
+
+
+.features {
+
+
+    ul {
+        // flex-grow: 1;
+        padding: 0rem 4rem;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+
+        li {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-bottom: 1px solid $blue-sub-a-sh;
         }
 
-        .svg-hero-a {
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            top: 0rem;
-            left: 0rem;
-            background-image: url("../images//illustration-hero.svg");
-            background-position: center;
-            background-size: contain;
-            background-repeat: no-repeat;
-            width: 100%;
-            height: 0;
-            padding-top: 66.64%;
-            z-index: 1;
+
+        li:nth-child(1){
+            border-top: 1px solid $blue-sub-a-sh;
         }
 
-        .svg-hero-b {
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            top: 0rem;
-            left: 0rem;
-            background-image: url("../images//illustration-features-tab-1.svg");
-            background-position: center;
-            background-size: contain;
-            background-repeat: no-repeat;
-            width: 100%;
-            height: 0;
-            padding-top: 66.64%;
-            z-index: 1;
-            transform: scale(0.85);
+
+        a { 
+            // width: 100%;
+            text-align: center;
+            font-size: 1.6rem;
+            font-weight: 400;
+            letter-spacing: 0.1rem;
+            color: $blue-sub-b;
+            padding: 2.25rem 0rem;
+            text-decoration: none;
+
+            cursor: pointer;
         }
 
-        .background-right {
-            z-index: 0;
-            position: absolute;
-            bottom: 0rem;
-            width: 150vw;
-            height: 75%;
-            left: 20%;
-            background-color: $blue-main;
-            border-radius: 1000rem;
-        }
-
-        .background-left {
-            z-index: 0;
-            position: absolute;
-            bottom: 0rem;
-            width: 150vw;
-            height: 75%;
-            right: 20%;
-            background-color: $blue-main;
-            border-radius: 1000rem;
+        a.tab-select {
+            padding-bottom: 1.85rem;
+            border-bottom: 0.4rem solid $red-main;
         }
     }
+
+    .feature-item {
+        padding: 5rem 0rem;
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+
 }

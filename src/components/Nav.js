@@ -41,7 +41,6 @@ function Nav() {
         return(
             <header id="mobile-header">
                 <LogoSvg />
-
                 <button onClick={openNav}>
                     <HamburgerSvg />
                 </button>
