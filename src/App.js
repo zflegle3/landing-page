@@ -6,6 +6,7 @@ import SectionLeft from "./components/SectionLeft";
 import Features from "./components/Features";
 import Download from "./components/Download"
 import FAQ from "./components/FAQ"
+import Contact from "./components/Contact"
 
 function App() {
 
@@ -16,6 +17,7 @@ function App() {
       <Features />
       <Download />
       <FAQ />
+      <Contact />
       {/* <SectionLeft /> */}
     </div>
   );
