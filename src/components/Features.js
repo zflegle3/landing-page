@@ -11,34 +11,30 @@ import FeatureItem from "../components/FeatureItem";
 function Features() {
     
     const tabInfo = [
-        {title: "Bookmark in one click",
+        {id: 1,
+        title: "Bookmark in one click",
         text: "Organize your bookmarks however you like. Our simple drag-and-drop interface gives you complete control over how you manager your favorite sites."
         },
-        {title: "Intelligent Search",
+        {id: 2,
+        title: "Intelligent Search",
         text: "Our powerful search feature will help you find saved sites in no time at all. No need to trawl through all of your bookmarks."
         },
-        {title: "Share your bookmarks",
+        {id: 3,
+        title: "Share your bookmarks",
         text: "Easily share your bookmarks and collections with others. Create a shareable link that you can send at the click of a button."
         },
     ]
 
-
     const selectTab = (e) => {
         // e.preventDefault();
-        console.log(e.target.id);
         let linksAll = document.querySelectorAll("#feature-tab");
-        console.log(linksAll);
         for (let i=0; i< linksAll.length; i++) {
-            console.log(i);
-            console.log(linksAll[i]);
             if (linksAll[i].className === "tab-select") {
-                console.log(linksAll[i], "was selected")
                 linksAll[i].className =  "";
             }
         };
         e.target.classList.add("tab-select")
     }
-
 
   return (
     <div className="features">
