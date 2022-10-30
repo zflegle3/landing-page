@@ -203,7 +203,7 @@ header.hide {
         font-weight: 500;
         text-align: center;
         line-height: 3.6rem;
-        padding: 1rem 2rem;
+        padding: 1rem 5rem;
     }
 
     p {
@@ -436,9 +436,84 @@ header.hide {
             background-repeat: repeat-x;
         }
     }
+}
 
 
+.faq-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    .dropdown-container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 3rem;
+
+        div[id*="tab-item"] {
+            width: 100%;
+            padding: 1rem 0rem;
+            border-bottom: 1px solid $blue-sub-a-sh;
+
+            .tab-title {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                padding: 1.5rem 0rem;
 
 
+                h2 {
+                    font-size: 1.5rem;
+                    color: $blue-sub-b;
+                    font-weight: 400;
+                    text-align: center;
+                    line-height: 3.6rem;
+                    // padding: 1rem 2rem;
+                }
+            }
+
+            .tab-content {
+                height: 0rem;
+            }
+        }
+
+        div[id*="tab-item"].open {
+            width: 100%;
+            padding: 1rem 0rem;
+            border-bottom: 1px solid $blue-sub-a-sh;
+
+            .tab-title {
+                svg {
+                    transform: rotate(180deg);
+                    path {
+                        stroke: $red-main;
+                    }
+                }
+            }
+
+            .tab-content {
+                height: auto;
+            }
+        }
+    }
+
+    .button-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        button {
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: $bg-main;
+            background-color: $blue-main;
+            border: none;
+            border-radius: 0.5rem;
+            padding: 1.5rem 3rem;
+        }
+    }
 
 }
