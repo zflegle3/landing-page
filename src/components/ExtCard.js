@@ -2,12 +2,11 @@
 import { ReactComponent as ChromeSvg } from '../images/logo-chrome.svg';
 import { ReactComponent as FirefoxSvg } from '../images/logo-firefox.svg';
 import { ReactComponent as OperaSvg } from '../images/logo-opera.svg';
-import {ReactComponent as DotBorderSvg} from "../images/bg-dots.svg"
+import { ReactComponent as DotBorderSvg } from "../images/bg-dots.svg"
 
 
 function ExtCard(props) {
 
-    console.log(props.data.id)
     let svgSrc;
     switch (props.data.id) {
         case 1:

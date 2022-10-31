@@ -8,24 +8,15 @@ import NavModal from "../components/NavModal"
 function Nav() {
     const [open, setOpen] = useState(false);
 
-
-
-
-
     let vw = window.screen.width;
-    console.log(vw);
 
     const openNav = () => {
-        console.log("Open Nav");
-        //set nav visability to hidden
         //open nav modal in portal
         document.getElementById("mobile-header").classList.add("hide");
         setOpen(true);
     }
 
     const closeNav = () => {
-        console.log("Close Nav");
-        //set nav visability to visable
         //close nav modal in portal
         document.getElementById("mobile-header").classList.remove("hide");
         setOpen(false);
@@ -34,7 +25,13 @@ function Nav() {
     if (vw > 760) {
         return (
             <header>
-
+                <LogoSvg />
+                <div className="nav-links">
+                    <a href="">FEATURES</a>
+                    <a href="">PRICING</a>
+                    <a href="">CONTACT</a>
+                    <button>LOGIN</button>
+                </div>
             </header>
         );
     } else {

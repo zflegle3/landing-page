@@ -1,11 +1,5 @@
-
-import { ReactComponent as ContentSvg } from '../images/illustration-hero.svg';
-
-
 function SectionRight() {
 
-
-    let vw = window.screen.width;
     return (
       <div className="container-main">
         <div className="container-sub-a">
@@ -17,7 +11,6 @@ function SectionRight() {
             </div>
         </div>
         <div className="container-sub-b">
-            {/* <ContentSvg/> */}
             <div className="svg-hero"></div>
             <div className="background-right"></div>
         </div>

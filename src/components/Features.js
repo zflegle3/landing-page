@@ -26,7 +26,6 @@ function Features() {
     ]
 
     const selectTab = (e) => {
-        // e.preventDefault();
         let linksAll = document.querySelectorAll("#feature-tab");
         for (let i=0; i< linksAll.length; i++) {
             if (linksAll[i].className === "tab-select") {
@@ -44,7 +43,6 @@ function Features() {
         </div>
         <Router>
         <ul>
-            
                 <li className="feature-link">
                     <Link to="/bookmark" id="feature-tab" onClick={selectTab}>Simple Bookmarking</Link>
                 </li>
@@ -54,17 +52,14 @@ function Features() {
                 <li className="feature-link">
                     <Link to="/share" id="feature-tab" onClick={selectTab}>Easy Sharing</Link>
                 </li>
-
         </ul>
         <div className="features-content">
-            {/* <Router> */}
-                <Routes>
-                        <Route exact path="/bookmark" element={<FeatureItem tabData={tabInfo[0]}/>}/>
-                        <Route exact path="/search" element={<FeatureItem tabData={tabInfo[1]}/>}/>
-                        <Route exact path="/share" element={<FeatureItem tabData={tabInfo[2]}/>}/>
-                        <Route path="*" element={<Navigate to="/bookmark" replace />}/>
-                </Routes>
-            {/* </Router> */}
+            <Routes>
+                    <Route exact path="/bookmark" element={<FeatureItem tabData={tabInfo[0]}/>}/>
+                    <Route exact path="/search" element={<FeatureItem tabData={tabInfo[1]}/>}/>
+                    <Route exact path="/share" element={<FeatureItem tabData={tabInfo[2]}/>}/>
+                    <Route path="*" element={<Navigate to="/bookmark" replace />}/>
+            </Routes>
         </div>
         </Router>
 

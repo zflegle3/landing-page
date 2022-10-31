@@ -1,15 +1,11 @@
-
-import { ReactComponent as OperaSvg } from '../images/icon-error.svg';
-
+import { ReactComponent as ErrorSvg } from '../images/icon-error.svg';
 
 function Contact(props) {
-
 
     const handleSubmit = (e) => {
         e.preventDefault();
         //get email input
         let emailIn = document.getElementById("email").value;
-        console.log("email:",emailIn);
         //reset error state
         let inputContainer = document.getElementById("input-container");
         inputContainer.className="";
@@ -18,7 +14,7 @@ function Contact(props) {
         //validate length
         if (emailIn.length > 1) {
             if (validateEmailFormat(emailIn)) {
-                //If working site add email submission here
+                //If functional site, add email submission here
                 document.querySelector("form").reset();
             } else {
                 inputContainer.className="invalid";
@@ -47,7 +43,7 @@ function Contact(props) {
             <div id="input-container">
                 <input type="email" id="email" name="email" placeholder="Enter your email address"></input>
                 <p id="input-err">Email Error</p>
-                <OperaSvg />
+                <ErrorSvg />
             </div>
             <button onClick={handleSubmit}>Contact Us</button>
         </form>

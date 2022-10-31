@@ -1,5 +1,4 @@
 import ReactDom from "react-dom";
-import React, { useState } from 'react';
 
 import { ReactComponent as LogoSvg } from '../images/logo-bookmark.svg';
 import { ReactComponent as CloseSvg } from '../images/icon-close.svg';

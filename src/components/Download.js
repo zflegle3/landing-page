@@ -1,9 +1,5 @@
 import { v4 as uuidv4 } from 'uuid';
-
 import ExtCard from "./ExtCard"
-
-import { ReactComponent as ChromeSvg  } from '../images/logo-chrome.svg';
-
 
 function Download(props) {
 
@@ -22,11 +18,9 @@ function Download(props) {
         },
     ]
 
-
     let extensionComps = tabInfo.map((extension) =>
         <ExtCard key={uuidv4()} data={extension}/>
     );
-
 
   return (
     <div className="extensions">

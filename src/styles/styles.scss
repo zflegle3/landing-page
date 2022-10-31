@@ -1,63 +1,14 @@
-
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-    font-size: 10px;
-	vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
-body {
-	line-height: 1;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
-
-
-// Colors
+// Solid Colors
 $bg-main: #ffffff;
 $txt-black: #000000;
 $blue-main: hsl(231, 69%, 60%);
 $red-main: hsl(0, 94%, 66%);
 $grey-main: rgb(210, 210, 210);
-
-
 $blue-sub-a: hsl(229, 8%, 60%);
 $blue-sub-b: hsl(229, 31%, 21%);
-
+//Shades
 $blue-sub-a-sh: rgba(145, 148, 161,0.40);
 $blue-sub-b-sh: rgba(37, 43, 70,0.90);
-
-
 
 * {
     font-family: 'Rubik', sans-serif;
@@ -151,9 +102,14 @@ $blue-sub-b-sh: rgba(37, 43, 70,0.90);
     width: 100vw;
     overflow-y: hidden;
     background-color: $bg-main;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 header {
+    width: 100%;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -177,13 +133,13 @@ header.hide {
     display: flex;
     flex-direction: column-reverse;
     width: 100vw;
-    padding: 2.5rem 0rem;
+    padding: 2.5rem 0rem 5rem 0rem;
 }
 
 
 // Reused Text Container
 .container-sub-a {
-    padding: 5rem 0rem;
+    padding: 2.5rem 0rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -195,7 +151,7 @@ header.hide {
         font-weight: 500;
         text-align: center;
         line-height: 3.6rem;
-        padding: 1rem 2rem;
+        padding: rem 2rem;
     }
 
     h2 {
@@ -204,7 +160,7 @@ header.hide {
         font-weight: 500;
         text-align: center;
         line-height: 3.6rem;
-        padding: 1rem 5rem;
+        padding: 0rem 5rem;
     }
 
     p {
@@ -223,7 +179,8 @@ header.hide {
         border-radius: 0.5rem;
         padding: 1.5rem;
         margin: 0.5rem;
-        box-shadow: 0rem 0.5rem 5rem $blue-sub-a-sh;
+        // box-shadow: 0rem 0.5rem 5rem $blue-sub-a-sh;
+        box-shadow: 0rem 3px 5px $blue-sub-a-sh;
     }
 
     .btn-a {
@@ -233,7 +190,7 @@ header.hide {
 
     .btn-b {
         background-color: $bg-main;
-        color: $blue-sub-a;
+        color: $blue-sub-b;
     }
 
 }
@@ -250,7 +207,7 @@ header.hide {
     overflow: hidden;
 
     .background-right {
-        height: 50;
+        height: 60%;
     }
 
     .svg-hero-a { //Right background
@@ -311,11 +268,11 @@ header.hide {
 
 
 .features {
-
+    padding: 2.5rem 0rem 5rem 0rem;
 
     ul {
         // flex-grow: 1;
-        padding: 0rem 4rem;
+        padding: 0rem 4rem 4rem 4rem;
 
         display: flex;
         flex-direction: column;
@@ -349,6 +306,23 @@ header.hide {
             cursor: pointer;
         }
 
+        a:focus-visible, a:focus {
+            outline: none;
+        }
+
+        a:hover { 
+            // width: 100%;
+            text-align: center;
+            font-size: 1.6rem;
+            font-weight: 400;
+            letter-spacing: 0.1rem;
+            color: $blue-sub-b;
+            padding: 2.25rem 0rem;
+            text-decoration: none;
+
+            cursor: pointer;
+        }
+
         a.tab-select {
             padding-bottom: 1.85rem;
             border-bottom: 0.4rem solid $red-main;
@@ -363,6 +337,10 @@ header.hide {
         background-image: url("../images/illustration-features-tab-3.svg");
     }
 
+}
+
+.extensions {
+    padding: 2.5rem 0rem 5rem 0rem;
 }
 
 .ext-card-container {
@@ -445,6 +423,7 @@ header.hide {
     display: flex;
     flex-direction: column;
     margin-bottom: 5rem;
+    padding: 2.5rem 0rem 5rem 0rem;
 
     .dropdown-container {
         width: 100%;
@@ -453,10 +432,11 @@ header.hide {
         justify-content: center;
         align-items: center;
         padding: 3rem;
+        padding-top: 0rem;
 
         div[id*="tab-item"] {
             width: 100%;
-            padding: 1rem 0rem;
+            // padding: 1rem 0rem;
             border-bottom: 1px solid $blue-sub-a-sh;
 
             .tab-title {
@@ -618,7 +598,7 @@ header.hide {
         }
 
         #input-container.invalid { 
-            //Error states
+            //Email error states
             margin-bottom: 2rem;
             border: 2px solid $red-main;
             border-radius: 0.5rem;
@@ -634,11 +614,8 @@ header.hide {
 
         }
 
-
-
         button {
             width: 100%;
-
             font-size: 1.5rem;
             font-weight: 400;
             color: $bg-main;
@@ -647,6 +624,54 @@ header.hide {
             border-radius: 0.5rem;
             padding: 1.5rem 3rem;
             box-shadow: 0rem 3px 5px $blue-sub-a-sh;
+        }
+    }
+}
+
+footer {
+    width: 100%;
+    background-color: $blue-sub-b;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem 3rem;
+
+    svg {
+        margin-bottom: 2rem;
+
+        g path {
+            fill: #ffffff;
+        }
+    }
+
+    .footer-links {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+
+        p { 
+            width: 100%;
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: 300;
+            letter-spacing: 0.3rem;
+            color: $bg-main;
+            padding: 2.25rem 0rem;
+            cursor: pointer;
+        }
+    }
+
+    .modal-footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        svg {
+            fill: #ffffff;
+            margin: 2rem;
         }
     }
 }
