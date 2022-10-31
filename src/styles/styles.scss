@@ -15,6 +15,47 @@ $blue-sub-b-sh: rgba(37, 43, 70,0.90);
     box-sizing: border-box;
 }
 
+//Font Themes
+@mixin fontXl {
+    font-size: 2.8rem;
+    font-weight: 500;
+    line-height: 3.6rem; 
+}
+
+@mixin fontL {
+    font-size: 2.2rem;
+    font-weight: 500;
+    line-height: 3.6rem; 
+}
+
+@mixin fontM {
+    font-size: 2rem;
+    font-weight: 200;
+    // line-height: 3.6rem; 
+}
+
+@mixin fontS {
+    font-size: 1.5rem;
+    font-weight: 400;
+    // line-height: 2.5rem; 
+}
+
+@mixin fontXs {
+    font-size: 1.2rem;
+    font-weight: 400;
+    // line-height: 3.6rem; 
+}
+
+
+
+
+
+
+
+
+
+
+
 .nav-modal {
     position: fixed;
     top: 0px;
@@ -67,10 +108,9 @@ $blue-sub-b-sh: rgba(37, 43, 70,0.90);
 
 
         p { 
+            @include fontM();
             width: 100%;
             text-align: center;
-            font-size: 2rem;
-            font-weight: 400;
             letter-spacing: 0.2rem;
             color: $bg-main;
             padding: 2.25rem 0rem;
@@ -138,7 +178,7 @@ header.hide {
 
 
 // Reused Text Container
-.container-sub-a {
+.container-sub-a, .container-main-a {
     padding: 2.5rem 0rem;
     display: flex;
     flex-direction: column;
@@ -146,40 +186,41 @@ header.hide {
     justify-content: center;
 
     h1 {
-        font-size: 2.8rem;
+        @include fontXl();
         color: $blue-sub-b;
-        font-weight: 500;
         text-align: center;
-        line-height: 3.6rem;
-        padding: rem 2rem;
+        padding: 2rem;
     }
 
     h2 {
-        font-size: 2.2rem;
+        // font-size: 2.2rem;
+        // line-height: 3.6rem;
+        // font-weight: 500;
+        @include fontL();
         color: $blue-sub-b;
-        font-weight: 500;
         text-align: center;
-        line-height: 3.6rem;
         padding: 0rem 5rem;
     }
 
     p {
+        @include fontS();
+        line-height: 2.5rem; 
         padding: 1.5rem 4rem;
-        font-size: 1.5rem;
-        font-weight: 400;
-        line-height: 2.5rem;
+        // font-size: 1.5rem;
+        // font-weight: 400;
+        // line-height: 2.5rem;
         color: $blue-sub-a;
         text-align: center;
     }
     
     button {
         border: none;
-        font-size: 1.5rem;
+        @include fontS();
+        // font-size: 1.5rem;
         // letter-spacing: 0.1rem;
         border-radius: 0.5rem;
         padding: 1.5rem;
         margin: 0.5rem;
-        // box-shadow: 0rem 0.5rem 5rem $blue-sub-a-sh;
         box-shadow: 0rem 3px 5px $blue-sub-a-sh;
     }
 
@@ -196,7 +237,7 @@ header.hide {
 }
 
 // Reused Image Container
-.container-sub-b {
+.container-sub-b, .container-main-b {
     position: relative;
     display: flex;
     align-items: center;
@@ -295,9 +336,10 @@ header.hide {
 
         a { 
             // width: 100%;
+            @include fontS();
             text-align: center;
-            font-size: 1.6rem;
-            font-weight: 400;
+            // font-size: 1.5rem;
+            // font-weight: 400;
             letter-spacing: 0.1rem;
             color: $blue-sub-b;
             padding: 2.25rem 0rem;
@@ -312,10 +354,6 @@ header.hide {
 
         a:hover { 
             // width: 100%;
-            text-align: center;
-            font-size: 1.6rem;
-            font-weight: 400;
-            letter-spacing: 0.1rem;
             color: $blue-sub-b;
             padding: 2.25rem 0rem;
             text-decoration: none;
@@ -368,7 +406,8 @@ header.hide {
         }
 
         h2 {
-            font-size: 2rem;
+            @include fontM();
+            // font-size: 2rem;
             color: $blue-sub-b;
             font-weight: 500;
             text-align: center;
@@ -377,9 +416,10 @@ header.hide {
         }
 
         p {
+            @include fontS();
             // padding: 1.5rem 4rem;
-            font-size: 1.5rem;
-            font-weight: 400;
+            // font-size: 1.5rem;
+            // font-weight: 400;
             line-height: 2.5rem;
             color: $blue-sub-a;
             text-align: center;
@@ -396,8 +436,9 @@ header.hide {
             justify-content: center;
 
             button {
-                font-size: 1.5rem;
-                font-weight: 400;
+                @include fontS();
+                // font-size: 1.5rem;
+                // font-weight: 400;
                 color: $bg-main;
                 background-color: $blue-main;
                 border: none;
@@ -448,9 +489,10 @@ header.hide {
 
 
                 h2 {
-                    font-size: 1.5rem;
+                    @include fontS();
+                    // font-size: 1.5rem;
+                    // font-weight: 400;
                     color: $blue-sub-b;
-                    font-weight: 400;
                     text-align: center;
                     line-height: 3.6rem;
                     // padding: 1rem 2rem;
@@ -482,8 +524,9 @@ header.hide {
                 height: auto;
 
                 p {
-                    font-size: 1.5rem;
-                    font-weight: 400;
+                    @include fontS();
+                    // font-size: 1.5rem;
+                    // font-weight: 400;
                     line-height: 2.5rem;
                     color: $blue-sub-a;
                     padding: 2rem 0rem;
@@ -499,8 +542,9 @@ header.hide {
         align-items: center;
 
         button {
-            font-size: 1.5rem;
-            font-weight: 400;
+            @include fontS();
+            // font-size: 1.5rem;
+            // font-weight: 400;
             color: $bg-main;
             background-color: $blue-main;
             border: none;
@@ -525,8 +569,9 @@ header.hide {
     // margin-top: 10rem;
 
     p, h2 {
-        font-size: 1.2rem;
-        font-weight: 400;
+        @include fontXs();
+        // font-size: 1.2rem;
+        // font-weight: 400;
         color: $bg-main;
         padding: 1rem 0rem;
         text-align: center;
@@ -537,7 +582,9 @@ header.hide {
     }
 
     h2 {
-        font-size: 2.2rem;
+        @include fontL();
+        // font-size: 2.2rem;
+        line-height: normal;
         letter-spacing: 0.1rem;
     }
 
@@ -559,9 +606,10 @@ header.hide {
 
             
             input {
+                @include fontXs();
                 width: 100%;
-                font-size: 1.2rem;
-                font-weight: 400;
+                // font-size: 1.2rem;
+                // font-weight: 400;
                 letter-spacing: 0.1rem;
                 color: $txt-black;
                 padding: 1.5rem 2rem;
@@ -615,9 +663,10 @@ header.hide {
         }
 
         button {
+            @include fontS();
             width: 100%;
-            font-size: 1.5rem;
-            font-weight: 400;
+            // font-size: 1.5rem;
+            // font-weight: 400;
             color: $bg-main;
             background-color: $red-main;
             border: none;
@@ -653,9 +702,10 @@ footer {
         justify-content: flex-start;
 
         p { 
+            @include fontS();
             width: 100%;
             text-align: center;
-            font-size: 1.5rem;
+            // font-size: 1.5rem;
             font-weight: 300;
             letter-spacing: 0.3rem;
             color: $bg-main;
