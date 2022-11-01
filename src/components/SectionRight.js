@@ -1,7 +1,7 @@
 function SectionRight() {
 
     return (
-      <div className="container-main">
+      <div className="content-main">
         <div className="container-main-a">
             <h1>A Simple Bookmark Manager</h1>
             <p>A clean and simple interface to organize your favorite websites. Open a new browser tab and see your sites load instantly. Try it for free.</p>

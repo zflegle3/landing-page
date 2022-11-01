@@ -31,130 +31,53 @@ $blue-sub-b-sh: rgba(37, 43, 70,0.90);
 @mixin fontM {
     font-size: 2rem;
     font-weight: 200;
-    // line-height: 3.6rem; 
 }
 
 @mixin fontS {
     font-size: 1.5rem;
     font-weight: 400;
-    // line-height: 2.5rem; 
 }
 
 @mixin fontXs {
     font-size: 1.2rem;
     font-weight: 400;
-    // line-height: 3.6rem; 
 }
 
-
-
-
-
-
-
-
-
-
-
-.nav-modal {
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    width: 100vw;
-    height: 100vh;
-    background-color: $blue-sub-b-sh;
-
+//Layout Themes
+@mixin alignColLeft {
     display: flex;
     flex-direction: column;
-    padding: 4rem 3rem;
-    z-index: 9999;
-
-    .modal-header {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-        border-bottom: 1px solid $blue-sub-a-sh;
-        padding-bottom: 4rem;
-
-        button {
-            background-color: transparent;
-            border: none;
-            cursor: pointer;
-        }
-    }
-
-    svg {
-        g path {
-            fill: #ffffff;
-        }
-        g g {
-            circle {
-                fill: #ffffff;
-            }
-            path {
-                fill: $blue-sub-b
-            }
-        }
-    }
-
-    .modal-links {
-        flex-grow: 1;
-
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-start;
-
-
-        p { 
-            @include fontM();
-            width: 100%;
-            text-align: center;
-            letter-spacing: 0.2rem;
-            color: $bg-main;
-            padding: 2.25rem 0rem;
-            border-bottom: 1px solid $blue-sub-a-sh;
-            cursor: pointer;
-        }
-
-        p.selected {
-            margin: 2.25rem 0rem;
-            padding: 1.25rem;
-            border: 2px solid $bg-main;
-            border-radius: 0.5rem;
-        }
-    }
-
-    .modal-footer {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        svg {
-            fill: #ffffff;
-            margin: 2rem;
-        }
-    }
+    justify-content: flex-start;
+    align-items: flex-start;
 }
 
-.App {
-    width: 100vw;
-    overflow-y: hidden;
-    background-color: $bg-main;
+@mixin alignColCenter {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-header {
-    width: 100%;
+@mixin alignRowCenter {
     display: flex;
     flex-direction: row;
+    justify-content: center;
     align-items: center;
-    justify-content: space-between;
+}
 
+
+//Section Themes
+.App {
+    width: 100vw;
+    overflow-y: hidden;
+    background-color: $bg-main;
+    @include alignColCenter();
+}
+
+header {
+    width: 100%;
+    @include alignRowCenter();
+    justify-content: space-between;
     padding: 4rem 2.5rem;
 
     button {
@@ -169,21 +92,136 @@ header.hide {
     visibility: hidden;
 }
 
-.container-main {
-    display: flex;
+.content-main {
+    @include alignColCenter();
     flex-direction: column-reverse;
     width: 100vw;
     padding: 2.5rem 0rem 5rem 0rem;
+
+    .container-main-a {
+        padding: 2.5rem 0rem;
+        @include alignColCenter();
+    
+        h1 {
+            @include fontXl();
+            color: $blue-sub-b;
+            text-align: center;
+            padding: 2rem;
+        }
+    
+        h2 {
+            @include fontL();
+            color: $blue-sub-b;
+            text-align: center;
+            padding: 0rem 5rem;
+        }
+    
+        p {
+            @include fontS();
+            line-height: 2.5rem; 
+            padding: 1.5rem 4rem;
+            color: $blue-sub-a;
+            text-align: center;
+        }
+        
+        button {
+            border: none;
+            @include fontS();
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            margin: 0.5rem;
+            box-shadow: 0rem 3px 5px $blue-sub-a-sh;
+        }
+    
+        .btn-a {
+            background-color: $blue-main;
+            color: $bg-main;
+        }
+    
+        .btn-b {
+            background-color: $bg-main;
+            color: $blue-sub-b;
+        }
+    }
+
+    .container-main-b {
+        position: relative;
+        @include alignRowCenter();
+        width: 100%;
+        height: 0;
+        padding-top: 66.64%;
+        overflow: hidden;
+    
+        .background-right {
+            height: 60%;
+        }
+    
+        .svg-hero-a { //Right background
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0rem;
+            left: 0rem;
+            background-image: url("../images//illustration-hero.svg");
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+            width: 100%;
+            height: 0;
+            padding-top: 66.64%;
+            z-index: 1;
+        }
+    
+        .svg-hero-b { //Left background
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0rem;
+            left: 0rem;
+            background-image: url("../images//illustration-features-tab-1.svg");
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+            width: 100%;
+            height: 0;
+            padding-top: 66.64%;
+            z-index: 1;
+            transform: scale(0.85);
+        }
+    
+        .background-right {
+            z-index: 0;
+            position: absolute;
+            bottom: 0rem;
+            width: 150vw;
+            height: 75%;
+            left: 20%;
+            background-color: $blue-main;
+            border-radius: 1000rem;
+        }
+    
+        .background-left {
+            z-index: 0;
+            position: absolute;
+            bottom: 0rem;
+            width: 150vw;
+            height: 75%;
+            right: 25%;
+            background-color: $blue-main;
+            border-radius: 1000rem;
+        }
+    }
 }
 
 
+
+
+
+
 // Reused Text Container
-.container-sub-a, .container-main-a {
+.container-sub-a {
     padding: 2.5rem 0rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    @include alignColCenter();
 
     h1 {
         @include fontXl();
@@ -193,9 +231,6 @@ header.hide {
     }
 
     h2 {
-        // font-size: 2.2rem;
-        // line-height: 3.6rem;
-        // font-weight: 500;
         @include fontL();
         color: $blue-sub-b;
         text-align: center;
@@ -206,9 +241,6 @@ header.hide {
         @include fontS();
         line-height: 2.5rem; 
         padding: 1.5rem 4rem;
-        // font-size: 1.5rem;
-        // font-weight: 400;
-        // line-height: 2.5rem;
         color: $blue-sub-a;
         text-align: center;
     }
@@ -216,8 +248,6 @@ header.hide {
     button {
         border: none;
         @include fontS();
-        // font-size: 1.5rem;
-        // letter-spacing: 0.1rem;
         border-radius: 0.5rem;
         padding: 1.5rem;
         margin: 0.5rem;
@@ -233,118 +263,35 @@ header.hide {
         background-color: $bg-main;
         color: $blue-sub-b;
     }
-
 }
-
-// Reused Image Container
-.container-sub-b, .container-main-b {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 0;
-    padding-top: 66.64%;
-    overflow: hidden;
-
-    .background-right {
-        height: 60%;
-    }
-
-    .svg-hero-a { //Right background
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        top: 0rem;
-        left: 0rem;
-        background-image: url("../images//illustration-hero.svg");
-        background-position: center;
-        background-size: contain;
-        background-repeat: no-repeat;
-        width: 100%;
-        height: 0;
-        padding-top: 66.64%;
-        z-index: 1;
-    }
-
-    .svg-hero-b { //Left background
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        top: 0rem;
-        left: 0rem;
-        background-image: url("../images//illustration-features-tab-1.svg");
-        background-position: center;
-        background-size: contain;
-        background-repeat: no-repeat;
-        width: 100%;
-        height: 0;
-        padding-top: 66.64%;
-        z-index: 1;
-        transform: scale(0.85);
-    }
-
-    .background-right {
-        z-index: 0;
-        position: absolute;
-        bottom: 0rem;
-        width: 150vw;
-        height: 75%;
-        left: 20%;
-        background-color: $blue-main;
-        border-radius: 1000rem;
-    }
-
-    .background-left {
-        z-index: 0;
-        position: absolute;
-        bottom: 0rem;
-        width: 150vw;
-        height: 75%;
-        right: 25%;
-        background-color: $blue-main;
-        border-radius: 1000rem;
-    }
-}
-
 
 .features {
     padding: 2.5rem 0rem 5rem 0rem;
+    width: 100%;
+    @include alignColCenter();
 
     ul {
-        // flex-grow: 1;
         padding: 0rem 4rem 4rem 4rem;
-
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-start;
+        @include alignColCenter();
+        width: 100%;
 
         li {
             width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            @include alignRowCenter();
             border-bottom: 1px solid $blue-sub-a-sh;
         }
-
 
         li:nth-child(1){
             border-top: 1px solid $blue-sub-a-sh;
         }
 
-
         a { 
-            // width: 100%;
             @include fontS();
             text-align: center;
-            // font-size: 1.5rem;
-            // font-weight: 400;
             letter-spacing: 0.1rem;
             color: $blue-sub-b;
             padding: 2.25rem 0rem;
             text-decoration: none;
-
             cursor: pointer;
         }
 
@@ -353,11 +300,7 @@ header.hide {
         }
 
         a:hover { 
-            // width: 100%;
             color: $blue-sub-b;
-            padding: 2.25rem 0rem;
-            text-decoration: none;
-
             cursor: pointer;
         }
 
@@ -367,6 +310,66 @@ header.hide {
         }
     }
 
+    .features-content {
+        width: 100%;
+    }
+
+    .container-sub-b {
+        position: relative;
+        @include alignRowCenter();
+        width: 100%;
+        height: 0;
+        padding-top: 66.64%;
+        overflow: hidden;
+    
+        .background-right {
+            height: 60%;
+        }
+    
+        .svg-hero-b { //Left background
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0rem;
+            left: 0rem;
+            // background-image: url("../images//illustration-features-tab-1.svg");
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+            width: 100%;
+            height: 0;
+            padding-top: 66.64%;
+            z-index: 1;
+            transform: scale(0.85);
+        }
+    
+        .background-right {
+            z-index: 0;
+            position: absolute;
+            bottom: 0rem;
+            width: 150vw;
+            height: 75%;
+            left: 20%;
+            background-color: $blue-main;
+            border-radius: 1000rem;
+        }
+    
+        .background-left {
+            z-index: 0;
+            position: absolute;
+            bottom: 0rem;
+            width: 150vw;
+            height: 75%;
+            right: 25%;
+            background-color: $blue-main;
+            border-radius: 1000rem;
+        }
+    }
+
+    .feature-item-1 .svg-hero-b {
+        background-image: url("../images//illustration-features-tab-1.svg");
+    }
+
     .feature-item-2 .svg-hero-b {
         background-image: url("../images/illustration-features-tab-2.svg");
     }
@@ -374,7 +377,6 @@ header.hide {
     .feature-item-3 .svg-hero-b {
         background-image: url("../images/illustration-features-tab-3.svg");
     }
-
 }
 
 .extensions {
@@ -382,22 +384,12 @@ header.hide {
 }
 
 .ext-card-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
+    @include alignColCenter();
     background-color: $bg-main;
 
-
     div[class*="ext-card-item"] {
-
         margin-bottom: 3rem;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-
+        @include alignColCenter();
         box-shadow: 0px 8px 10px $blue-sub-a-sh;
         border-radius: 1.5rem;
 
@@ -407,7 +399,6 @@ header.hide {
 
         h2 {
             @include fontM();
-            // font-size: 2rem;
             color: $blue-sub-b;
             font-weight: 500;
             text-align: center;
@@ -417,9 +408,6 @@ header.hide {
 
         p {
             @include fontS();
-            // padding: 1.5rem 4rem;
-            // font-size: 1.5rem;
-            // font-weight: 400;
             line-height: 2.5rem;
             color: $blue-sub-a;
             text-align: center;
@@ -427,18 +415,11 @@ header.hide {
         }
 
         .card-btn-container {
-            // width: 100%;
             padding: 2.5rem 0rem;
-            // margin-top: 3rem;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
+            @include alignColCenter();
 
             button {
                 @include fontS();
-                // font-size: 1.5rem;
-                // font-weight: 400;
                 color: $bg-main;
                 background-color: $blue-main;
                 border: none;
@@ -461,23 +442,18 @@ header.hide {
 
 .faq-container {
     width: 100%;
-    display: flex;
-    flex-direction: column;
+    @include alignColCenter();
     margin-bottom: 5rem;
     padding: 2.5rem 0rem 5rem 0rem;
 
     .dropdown-container {
         width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        @include alignColCenter();
         padding: 3rem;
         padding-top: 0rem;
 
         div[id*="tab-item"] {
             width: 100%;
-            // padding: 1rem 0rem;
             border-bottom: 1px solid $blue-sub-a-sh;
 
             .tab-title {
@@ -487,18 +463,12 @@ header.hide {
                 align-items: center;
                 padding: 1.5rem 0rem;
 
-
                 h2 {
                     @include fontS();
-                    // font-size: 1.5rem;
-                    // font-weight: 400;
                     color: $blue-sub-b;
                     text-align: center;
                     line-height: 3.6rem;
-                    // padding: 1rem 2rem;
                 }
-
-
             }
 
             .tab-content {
@@ -525,12 +495,9 @@ header.hide {
 
                 p {
                     @include fontS();
-                    // font-size: 1.5rem;
-                    // font-weight: 400;
                     line-height: 2.5rem;
                     color: $blue-sub-a;
                     padding: 2rem 0rem;
-                    // text-align: center;
                 }
             }
         }
@@ -543,8 +510,6 @@ header.hide {
 
         button {
             @include fontS();
-            // font-size: 1.5rem;
-            // font-weight: 400;
             color: $bg-main;
             background-color: $blue-main;
             border: none;
@@ -556,22 +521,14 @@ header.hide {
 
 }
 
-
 .contact {
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
+    @include alignColCenter();
     background-color: $blue-main;
     padding: 4rem 3rem;
-    // margin-top: 10rem;
 
     p, h2 {
         @include fontXs();
-        // font-size: 1.2rem;
-        // font-weight: 400;
         color: $bg-main;
         padding: 1rem 0rem;
         text-align: center;
@@ -583,39 +540,29 @@ header.hide {
 
     h2 {
         @include fontL();
-        // font-size: 2.2rem;
         line-height: normal;
         letter-spacing: 0.1rem;
     }
 
     form {
         width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        @include alignColCenter();
         margin-top: 2rem;
 
         #input-container {
             position: relative;
             width: 100%;
-   
             padding-bottom: 2rem;
             border: 2px solid transparent;
 
-
-            
             input {
                 @include fontXs();
                 width: 100%;
-                // font-size: 1.2rem;
-                // font-weight: 400;
                 letter-spacing: 0.1rem;
                 color: $txt-black;
                 padding: 1.5rem 2rem;
                 border: none;
                 border-radius: 0.5rem;
-                // margin-bottom: 2rem;
             }
 
             ::placeholder {
@@ -642,11 +589,9 @@ header.hide {
                 right: 1rem;
                 opacity: 0;
             }
-
         }
 
         #input-container.invalid { 
-            //Email error states
             margin-bottom: 2rem;
             border: 2px solid $red-main;
             border-radius: 0.5rem;
@@ -664,9 +609,8 @@ header.hide {
 
         button {
             @include fontS();
+            white-space:nowrap;
             width: 100%;
-            // font-size: 1.5rem;
-            // font-weight: 400;
             color: $bg-main;
             background-color: $red-main;
             border: none;
@@ -680,11 +624,7 @@ header.hide {
 footer {
     width: 100%;
     background-color: $blue-sub-b;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    @include alignColCenter();
     padding: 4rem 3rem;
 
     svg {
@@ -696,10 +636,7 @@ footer {
     }
 
     .footer-links {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-start;
+        @include alignColCenter();
 
         p { 
             @include fontS();
@@ -715,9 +652,81 @@ footer {
     }
 
     .modal-footer {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @include alignRowCenter();
+
+        svg {
+            fill: #ffffff;
+            margin: 2rem;
+        }
+    }
+}
+
+.nav-modal {
+    position: fixed;
+    @include alignColCenter();
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100vh;
+    background-color: $blue-sub-b-sh;
+    padding: 4rem 3rem;
+    z-index: 9999;
+
+    .modal-header {
+        width: 100%;
+        @include alignRowCenter();
+        justify-content: space-between;
+        border-bottom: 1px solid $blue-sub-a-sh;
+        padding-bottom: 4rem;
+
+        button {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+        }
+
+        svg {
+            g path {
+                fill: #ffffff;
+            }
+            g g {
+                circle {
+                    fill: #ffffff;
+                }
+                path {
+                    fill: $blue-sub-b
+                }
+            }
+        }
+    }
+
+    .modal-links {
+        width: 100%;
+        flex-grow: 1;
+        @include alignColCenter();
+        justify-content: flex-start;
+
+        p {
+            @include fontM();
+            width: 100%;
+            text-align: center;
+            letter-spacing: 0.2rem;
+            color: $bg-main;
+            padding: 2.25rem 0rem;
+            border-bottom: 1px solid $blue-sub-a-sh;
+            cursor: pointer;
+        }
+
+        p.selected {
+            margin: 2.25rem 0rem;
+            padding: 1.25rem;
+            border: 2px solid $bg-main;
+            border-radius: 0.5rem;
+        }
+    }
+
+    .modal-footer {
+        @include alignRowCenter();
 
         svg {
             fill: #ffffff;
