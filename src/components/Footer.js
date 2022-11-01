@@ -8,14 +8,15 @@ function Footer(props) {
 
     return (
             <footer>
-                <LogoSvg />
+                <LogoSvg class="logo-footer" />
                 <div className="footer-links">
+                    {/* <LogoSvg /> */}
                     <p onClick={props.closeNav}>FEATURES</p>
                     <p onClick={props.closeNav}>PRICING</p>
                     <p onClick={props.closeNav}>CONTACT</p>
                 </div>
 
-                <div className="modal-footer">
+                <div className="footer-icons">
                     <FacebookSvg />
                     <TwitterSvg />
                 </div>

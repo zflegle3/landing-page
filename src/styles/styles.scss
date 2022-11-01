@@ -69,7 +69,7 @@ $blue-sub-b-sh: rgba(37, 43, 70,0.90);
 //Section Themes
 .App {
     width: 100vw;
-    overflow-y: hidden;
+    overflow-x: hidden;
     background-color: $bg-main;
     @include alignColCenter();
 }
@@ -150,7 +150,7 @@ header.hide {
         width: 100%;
         height: 0;
         padding-top: 66.64%;
-        overflow: hidden;
+        // overflow: hidden;
     
         .background-right {
             height: 60%;
@@ -289,10 +289,11 @@ header.hide {
             @include fontS();
             text-align: center;
             letter-spacing: 0.1rem;
-            color: $blue-sub-b;
+            color: $blue-sub-a;
             padding: 2.25rem 0rem;
             text-decoration: none;
             cursor: pointer;
+            transition: color 0.3s;
         }
 
         a:focus-visible, a:focus {
@@ -300,13 +301,15 @@ header.hide {
         }
 
         a:hover { 
-            color: $blue-sub-b;
+            color: $red-main;
             cursor: pointer;
+            transition: color 0.3s;
         }
 
         a.tab-select {
             padding-bottom: 1.85rem;
             border-bottom: 0.4rem solid $red-main;
+            color: #000000;;
         }
     }
 
@@ -320,7 +323,7 @@ header.hide {
         width: 100%;
         height: 0;
         padding-top: 66.64%;
-        overflow: hidden;
+        // overflow: hidden;
     
         .background-right {
             height: 60%;
@@ -462,12 +465,22 @@ header.hide {
                 justify-content: space-between;
                 align-items: center;
                 padding: 1.5rem 0rem;
+                cursor: pointer;
 
                 h2 {
                     @include fontS();
                     color: $blue-sub-b;
                     text-align: center;
                     line-height: 3.6rem;
+                    transition: color 0.3s;
+                }
+            }
+
+            .tab-title:hover {
+
+                h2 {
+                    color: $red-main;
+                    transition: color 0.3s;
                 }
             }
 
@@ -596,6 +609,7 @@ header.hide {
             border: 2px solid $red-main;
             border-radius: 0.5rem;
             background-color: $red-main;
+            white-space: nowrap;
 
             #input-err {
                 opacity: 1;
@@ -725,7 +739,7 @@ footer {
         }
     }
 
-    .modal-footer {
+    .footer-icons {
         @include alignRowCenter();
 
         svg {
