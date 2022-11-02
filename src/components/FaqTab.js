@@ -26,7 +26,7 @@ function FaqTab(props) {
         );
     } else { //open state
         return (
-            <div id={`tab-item-${props.data.id}`} class="open">
+            <div id={`tab-item-${props.data.id}`} className="open">
                 <div className="tab-title" onClick={handleClose}>
                     <h2>{props.data.title}</h2>
                     <OpenSvg />

@@ -8,7 +8,7 @@ function Footer(props) {
 
     return (
             <footer>
-                <LogoSvg class="logo-footer" />
+                <LogoSvg className="logo-footer" />
                 <div className="footer-links">
                     {/* <LogoSvg /> */}
                     <p onClick={props.closeNav}>FEATURES</p>

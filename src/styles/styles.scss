@@ -80,10 +80,68 @@ header {
     justify-content: space-between;
     padding: 4rem 2.5rem;
 
+    .logo-icon {
+        // margin-right: 10rem;
+        width: 25rem;
+    }
+
     button {
         background-color: transparent;
         border: none;
         cursor: pointer;
+    }
+
+    .nav-links {
+        width: 100%;
+        max-width: 45rem;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        // gap: 3rem;
+
+        a {
+            font-size: 1.3rem;
+            color: $blue-sub-b;
+            font-weight: 400;
+            letter-spacing: 0.2rem;
+            transition: color 0.3s;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        a:hover {
+            color: $red-main;
+            transition: color 0.3s;
+
+        }
+
+        a:focus-visible {
+            outline: none;
+            text-decoration: underline;
+        }
+
+        button {
+            // width: 100%;
+            font-size: 1.3rem;
+            font-weight: 500;
+            letter-spacing: 0.2rem;
+            color: $bg-main;
+            background-color: $red-main;
+            border: none;
+            border-radius: 0.5rem;
+            padding: 1rem 3rem;
+            box-shadow: 0rem 3px 5px $blue-sub-a-sh;
+            border: 2px solid transparent;
+            transition: background-color 0.3s, color 0.3s, border 0.3s;
+        }
+
+        button:hover {
+            border: 2px solid $red-main;
+            background-color: $bg-main;
+            color: $red-main;
+            transition: background-color 0.3s, color 0.3s, border 0.3s;
+        }
     }
 
 }

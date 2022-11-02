@@ -1,5 +1,3 @@
-// @use "styles";
-
 // Solid Colors
 $bg-main: #ffffff;
 $txt-black: #000000;
@@ -12,7 +10,7 @@ $blue-sub-b: hsl(229, 31%, 21%);
 $blue-sub-a-sh: rgba(145, 148, 161,0.40);
 $blue-sub-b-sh: rgba(37, 43, 70,0.90);
 
-@media only screen and (min-width: 760px) {     /* For desktop: */
+@media only screen and (min-width: 760px) {/* For desktop: */
     //Font Themes
     @mixin fontXl {
         font-size: 5rem;
@@ -64,20 +62,9 @@ $blue-sub-b-sh: rgba(37, 43, 70,0.90);
     }
 
     //Section Themes
-    .App {
-        // width: 100vw;
-        // overflow-y: hidden;
-        // background-color: $bg-main;
-        // @include alignColCenter();
-    }
 
     header {
         width: 80%;
-        // display: flex;
-        // flex-direction: row;
-        // align-items: center;
-        // justify-content: space-between;
-        // padding: 5rem 15rem;
 
         button {
             background-color: transparent;
@@ -86,11 +73,12 @@ $blue-sub-b-sh: rgba(37, 43, 70,0.90);
         }
 
         .nav-links {
+            width: 100%;
+            max-width: 45rem;
             display: flex;
             flex-direction: row;
             align-items: center;
-            justify-content: center;
-            gap: 3rem;
+            justify-content: space-between;
 
             a {
                 font-size: 1.3rem;
@@ -114,7 +102,6 @@ $blue-sub-b-sh: rgba(37, 43, 70,0.90);
             }
 
             button {
-                width: 100%;
                 font-size: 1.3rem;
                 font-weight: 500;
                 letter-spacing: 0.2rem;
@@ -139,7 +126,6 @@ $blue-sub-b-sh: rgba(37, 43, 70,0.90);
 
     .content-main {
         @include alignRowCenter();
-        // flex-direction: column-reverse;
         width: 100vw;
         padding: 5rem 5%;
 
@@ -151,7 +137,6 @@ $blue-sub-b-sh: rgba(37, 43, 70,0.90);
         
             h1 {
                 @include fontXl();
-                // color: $blue-sub-b;
                 text-align: start;
                 padding: 1rem 0rem;
             }
@@ -160,18 +145,14 @@ $blue-sub-b-sh: rgba(37, 43, 70,0.90);
                 @include fontM();
                 line-height: 2.8rem; 
                 padding: 1.5rem 0rem;
-                // color: $blue-sub-a;
                 text-align: start;
             }
             
             button {
-                // border: none;
                 @include fontS();
-                // border-radius: 0.5rem;
                 padding: 1.5rem 2.5rem;
                 margin: 1rem 2rem 1rem 0rem;
                 cursor: pointer;
-                // box-shadow: 0rem 3px 5px $blue-sub-a-sh;
                 transition: 0.3s;
             }
         
@@ -196,80 +177,6 @@ $blue-sub-b-sh: rgba(37, 43, 70,0.90);
             width: 50%;
             height: 0;
             padding-top: 35%;
-            // overflow: hidden;
-
-            // position: relative;
-            // @include alignRowCenter();
-            // width: 50%;
-            // height: auto;
-            // padding-top: 0rem;
-            // overflow: hidden;
-            // padding: 4rem;
-        
-            // .background-right {
-            //     height: 60%;
-            // }
-            
-            // svg {
-            //     z-index: 1;
-            //     width: 100%;
-            //     height: 100p20;
-            // }
-        
-            // .svg-hero-a { //Right background
-            //     width: 100%;
-            //     height: 100%;
-            //     position: absolute;
-            //     top: 0rem;
-            //     left: 0rem;
-            //     background-image: url("../images//illustration-hero.svg");
-            //     background-position: center;
-            //     background-size: contain;
-            //     background-repeat: no-repeat;
-            //     width: 100%;
-            //     height: 0;
-            //     padding-top: 66.64%;
-            //     z-index: 1;
-            // }
-        
-            // .svg-hero-b { //Left background
-            //     width: 100%;
-            //     height: 100%;
-            //     position: absolute;
-            //     top: 0rem;
-            //     left: 0rem;
-            //     background-image: url("../images//illustration-features-tab-1.svg");
-            //     background-position: center;
-            //     background-size: contain;
-            //     background-repeat: no-repeat;
-            //     width: 100%;
-            //     height: 0;
-            //     padding-top: 66.64%;
-            //     z-index: 1;
-            //     transform: scale(0.85);
-            // }
-        
-            // .background-right {
-            //     z-index: 0;
-            //     position: absolute;
-            //     bottom: 0rem;
-            //     width: 150vw;
-            //     height: 75%;
-            //     left: 20%;
-            //     background-color: $blue-main;
-            //     border-radius: 1000rem;
-            // }
-        
-            // .background-left {
-            //     z-index: 0;
-            //     position: absolute;
-            //     bottom: 0rem;
-            //     width: 150vw;
-            //     height: 75%;
-            //     right: 25%;
-            //     background-color: $blue-main;
-            //     border-radius: 1000rem;
-            // }
         }
     }
 
@@ -277,21 +184,12 @@ $blue-sub-b-sh: rgba(37, 43, 70,0.90);
 
     // Reused Text Container
     .container-sub-a {
-        max-width: 42%;
+        max-width: 60rem;
         padding: 2.5rem 0rem;
         @include alignColCenter();
 
-        // h1 {
-        //     @include fontXl();
-        //     color: $blue-sub-b;
-        //     text-align: center;
-        //     padding: 2rem;
-        // }
-
         h2 {
             @include fontL();
-            // color: $blue-sub-b;
-            // text-align: center;
             padding: 0rem 0rem;
         }
 
@@ -324,19 +222,13 @@ $blue-sub-b-sh: rgba(37, 43, 70,0.90);
     }
 
     .features {
-        // padding: 2.5rem 0rem 5rem 0rem;
-        // width: 100%;
 
         ul {
-            // padding: 0rem 4rem 4rem 4rem;
             @include alignRowCenter();
             max-width: 50%;
 
             li {
                 white-space: nowrap;
-                // width: 100%;
-                // @include alignRowCenter();
-                // border-bottom: 1px solid $blue-sub-a-sh;
             }
 
             li:nth-child(1){
@@ -344,19 +236,8 @@ $blue-sub-b-sh: rgba(37, 43, 70,0.90);
             }
 
             a { 
-                // @include fontS();
-                // text-align: center;
-                // letter-spacing: 0.1rem;
-                // color: $blue-sub-b;
                 padding: 2.25rem 3rem;
-                // text-decoration: none;
-                // cursor: pointer;
-                transition: border-bottom 0.3s;
             }
-
-            // a:focus-visible, a:focus {
-            //     outline: none;
-            // }
 
             a:hover { 
                 color: $red-main;
@@ -366,16 +247,12 @@ $blue-sub-b-sh: rgba(37, 43, 70,0.90);
             a.tab-select {
                 padding-bottom: 1.85rem;
                 border-bottom: 0.4rem solid $red-main;
-                transition: border-bottom 0.3s;
             }
         }
 
         .features-content {
 
             .container-sub-a {
-                // max-width: 42%;
-                // padding: 2.5rem 0rem;
-                // @include alignColCenter();
                 width: 50%;
                 padding: 2.5rem 7rem;
                 @include alignColCenter();
@@ -399,16 +276,6 @@ $blue-sub-b-sh: rgba(37, 43, 70,0.90);
                     box-shadow: 0rem 3px 5px $blue-sub-a-sh;
                     cursor: pointer;
                 }
-        
-                // .btn-a {
-                //     background-color: $blue-main;
-                //     color: $bg-main;
-                // }
-        
-                // .btn-b {
-                //     background-color: $bg-main;
-                //     color: $blue-sub-b;
-                // }
             }
         }
 
@@ -418,73 +285,15 @@ $blue-sub-b-sh: rgba(37, 43, 70,0.90);
             width: 50%;
             height: 0;
             padding-top: 35%;
-
-            // position: relative;
-            // @include alignRowCenter();
-            // width: 100%;
-            // height: 0;
-            // padding-top: 66.64%;
-            // overflow: hidden;
         
             .background-right {
                 height: 60%;
             }
-        
-            // .svg-hero-b { //Left background
-            //     width: 100%;
-            //     height: 100%;
-            //     position: absolute;
-            //     top: 0rem;
-            //     left: 0rem;
-            //     // background-image: url("../images//illustration-features-tab-1.svg");
-            //     background-position: center;
-            //     background-size: contain;
-            //     background-repeat: no-repeat;
-            //     width: 100%;
-            //     height: 0;
-            //     padding-top: 66.64%;
-            //     z-index: 1;
-            //     transform: scale(0.85);
-            // }
-        
-            // .background-right {
-            //     z-index: 0;
-            //     position: absolute;
-            //     bottom: 0rem;
-            //     width: 150vw;
-            //     height: 75%;
-            //     left: 20%;
-            //     background-color: $blue-main;
-            //     border-radius: 1000rem;
-            // }
-        
-            // .background-left {
-            //     z-index: 0;
-            //     position: absolute;
-            //     bottom: 0rem;
-            //     width: 150vw;
-            //     height: 75%;
-            //     right: 25%;
-            //     background-color: $blue-main;
-            //     border-radius: 1000rem;
-            // }
         }
 
         div[class*="feature-item"] {
             @include alignRowCenter();
         }
-
-        // .feature-item-1 .svg-hero-b {
-        //     background-image: url("../images//illustration-features-tab-1.svg");
-        // }
-
-        // .feature-item-2 .svg-hero-b {
-        //     background-image: url("../images/illustration-features-tab-2.svg");
-        // }
-
-        // .feature-item-3 .svg-hero-b {
-        //     background-image: url("../images/illustration-features-tab-3.svg");
-        // }
     }
 
     .extensions {
@@ -492,50 +301,7 @@ $blue-sub-b-sh: rgba(37, 43, 70,0.90);
         @include alignColCenter();
 
         .container-sub-a {
-            max-width: 65%;
-            // padding: 2.5rem 0rem;
-            // @include alignColCenter();
-    
-            // h1 {
-            //     @include fontXl();
-            //     color: $blue-sub-b;
-            //     text-align: center;
-            //     padding: 2rem;
-            // }
-    
-            // h2 {
-            //     @include fontL();
-                // color: $blue-sub-b;
-                // text-align: center;
-                // padding: 0rem 5rem;
-            // }
-    
-            // p {
-            //     @include fontM();
-            //     line-height: 2.8rem; 
-            //     padding: 1.5rem 4rem;
-            //     color: $blue-sub-a;
-            //     text-align: center;
-            // }
-            
-            // button:hover {
-            //     // border: none;
-            //     // @include fontS();
-            //     // border-radius: 0.5rem;
-            //     // padding: 1.5rem;
-            //     // margin: 0.5rem;
-            //     // box-shadow: 0rem 3px 5px $blue-sub-a-sh;
-            // }
-    
-            // .btn-a {
-            //     background-color: $blue-main;
-            //     color: $bg-main;
-            // }
-    
-            // .btn-b {
-            //     background-color: $bg-main;
-            //     color: $blue-sub-b;
-            // }
+            max-width: 60rem;
         }
 
     }
@@ -545,36 +311,9 @@ $blue-sub-b-sh: rgba(37, 43, 70,0.90);
         background-color: $bg-main;
 
         div[class*="ext-card-item"] {
-            // margin-bottom: 3rem;
-            // @include alignColCenter();
-            // box-shadow: 0px 8px 10px $blue-sub-a-sh;
-            // border-radius: 1.5rem;
             margin: 1.5rem;
 
-            // svg:nth-child(1) {
-            //     margin: 3rem;
-            // }
-
-            // h2 {
-            //     @include fontM();
-            //     color: $blue-sub-b;
-            //     font-weight: 500;
-            //     text-align: center;
-            //     line-height: 3.6rem;
-            //     padding: 1rem 2rem;
-            // }
-
-            // p {
-            //     @include fontS();
-            //     line-height: 2.5rem;
-            //     color: $blue-sub-a;
-            //     text-align: center;
-            //     margin-bottom: 3rem;
-            // }
-
             .card-btn-container {
-                // padding: 2.5rem 0rem;
-                // @include alignColCenter();
 
                 button {
                     transition: 0.3s;
@@ -585,22 +324,9 @@ $blue-sub-b-sh: rgba(37, 43, 70,0.90);
                     @include fontS();
                     color: $blue-main;
                     background: transparent;
-                    // background-color: $blue-main;
-                    // border: none;
-                    // border-radius: 0.5rem;
-                    // padding: 1.5rem 3rem;
                     transition: 0.3s;
                 }
             }
-
-            // .border-dot {
-            //     width: 100%;
-            //     height: 10px;
-            //     background-image: linear-gradient(to right, #000 10%, rgba(255, 255, 255, 0) 0%);
-            //     background-position: top;
-            //     background-size: 10px 1px;
-            //     background-repeat: repeat-x;
-            // }
         }
 
         .ext-card-item-2 {
@@ -612,38 +338,19 @@ $blue-sub-b-sh: rgba(37, 43, 70,0.90);
         }
     }
 
-
     .faq-container {
-        // width: 100%;
-        // @include alignColCenter();
-        // margin-bottom: 5rem;
-        // padding: 2.5rem 0rem 5rem 0rem;
 
         .dropdown-container {
-            // width: 100%;
-            max-width: 40%;
-            // @include alignColCenter();
-            // padding: 3rem;
-            // padding-top: 0rem;
+            max-width: 60rem;
 
             div[id*="tab-item"] {
-                // width: 100%;
-                // border-bottom: 1px solid $blue-sub-a-sh;
 
                 .tab-title {
-                    // display: flex;
-                    // flex-direction: row;
-                    // justify-content: space-between;
-                    // align-items: center;
-                    // padding: 1.5rem 0rem;
                     transition: 0.3s;
 
                     h2 {
                         @include fontM();
                         font-weight: 400;
-                        // color: $blue-sub-b;
-                        // text-align: center;
-                        // line-height: 3.6rem;
                     }
                 }
 
@@ -653,10 +360,6 @@ $blue-sub-b-sh: rgba(37, 43, 70,0.90);
                         transition: 0.3s;
                     }
                 }
-
-                // .tab-content {
-                //     height: 0rem;
-                // }
             }
 
             #tab-item-1 {
@@ -664,47 +367,22 @@ $blue-sub-b-sh: rgba(37, 43, 70,0.90);
             }
 
             div[id*="tab-item"].open {
-                // width: 100%;
-                // padding: 1rem 0rem;
-                // border-bottom: 1px solid $blue-sub-a-sh;
-
-                // .tab-title {
-                //     svg {
-                //         transform: rotate(180deg);
-                //         path {
-                //             stroke: $red-main;
-                //         }
-                //     }
-                // }
 
                 .tab-content {
-                    // height: auto;
 
                     p {
                         @include fontS();
                         font-size: 1.6rem;
                         line-height: 3.5rem;
                         font-weight: 300;
-                        // color: $blue-sub-a;
-                        // padding: 2rem 0rem;
                     }
                 }
             }
         }
 
         .button-container {
-            // display: flex;
-            // justify-content: center;
-            // align-items: center;
 
             button {
-                // @include fontS();
-                // color: $bg-main;
-                // background-color: $blue-main;
-                // border: none;
-                // border-radius: 0.5rem;
-                // padding: 1.5rem 3rem;
-                // box-shadow: 0rem 3px 5px $blue-sub-a-sh;
                 cursor: pointer;
             }
         }
@@ -712,105 +390,21 @@ $blue-sub-b-sh: rgba(37, 43, 70,0.90);
     }
 
     .contact {
-        // width: 100%;
-        // @include alignColCenter();
-        // background-color: $blue-main;
-        // padding: 4rem 3rem;
 
         p, h2 {
-            // @include fontXs();
-            // color: $bg-main;
-            // padding: 1rem 0rem;
-            // text-align: center;
-            max-width: 35%;
+            max-width: 45rem;
         }
-
-        // p {
-        //     letter-spacing: 0.5rem;
-        // }
 
         h2 {
             @include fontL();
-            // line-height: normal;
-            // letter-spacing: 0.1rem;
         }
 
         form {
-            // width: 100%;
-            // max-width: 50rem;
             @include alignRowCenter();
             align-items: flex-start;
-            // margin-top: 2rem;
-            max-width: 35%;
-
-            // #input-container {
-            //     position: relative;
-            //     width: 100%;
-            //     padding-bottom: 2rem;
-            //     border: 2px solid transparent;
-
-                // input {
-                //     @include fontXs();
-                //     width: 100%;
-                //     letter-spacing: 0.1rem;
-                //     color: $txt-black;
-                //     padding: 1.5rem 2rem;
-                //     border: none;
-                //     border-radius: 0.5rem;
-                // }
-
-                // ::placeholder {
-                //     color: $blue-sub-a-sh;
-                // }
-
-                // #input-err {
-                //     position: absolute;
-                //     bottom: 0.5rem;
-                //     left: 1rem;
-                //     font-size: 1rem;
-                //     font-style: italic;
-                //     letter-spacing: 0rem;
-                //     font-weight: 400;
-                //     color: $bg-main;
-                //     padding: 0rem;
-                //     text-align: center;
-                //     opacity: 0;
-                // }
-
-                // svg {
-                //     position: absolute;
-                //     top: 1rem;
-                //     right: 1rem;
-                //     opacity: 0;
-                // }
-            // }
-
-            // #input-container.invalid { 
-            //     @include alignRowCenter();
-            //     align-items: flex-start;
-            //     margin-bottom: 2rem;
-            //     border: 2px solid $red-main;
-            //     border-radius: 0.5rem;
-            //     background-color: $red-main;
-
-            //     #input-err {
-            //         opacity: 1;
-            //     }
-
-            //     svg {
-            //         opacity: 1;
-            //     }
-            // }
+            max-width: 45rem;
 
             button {
-                // @include fontS();
-                // color: $bg-main;
-                // background-color: $red-main;
-                // border: none;
-                // border-radius: 0.5rem;
-                // padding: 1.5rem 3rem;
-                // box-shadow: 0rem 3px 5px $blue-sub-a-sh;
-
                 margin-left: 1.5rem;
                 width: auto;
                 transition: 0.3s;
@@ -845,18 +439,10 @@ $blue-sub-b-sh: rgba(37, 43, 70,0.90);
         .footer-links {
             @include alignRowCenter();
             margin-left: 20rem;
-            // justify-content: space-around;
 
             p { 
                 @include fontXs();
-                // width: 100%;
-                // text-align: center;
-                // // font-size: 1.5rem;
-                // font-weight: 300;
-                // letter-spacing: 0.3rem;
-                // color: $bg-main;
                 padding: 2.25rem 2rem;
-                // cursor: pointer;
                 transition: color 0.3s;
             }
 

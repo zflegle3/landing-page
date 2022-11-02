@@ -8,7 +8,7 @@ import NavModal from "../components/NavModal"
 function Nav() {
     const [open, setOpen] = useState(false);
 
-    let vw = window.screen.width;
+    let vw = window.innerWidth;
 
     const openNav = () => {
         //open nav modal in portal
@@ -25,7 +25,7 @@ function Nav() {
     if (vw > 760) {
         return (
             <header>
-                <LogoSvg />
+                <LogoSvg className="logo-icon" />
                 <div className="nav-links">
                     <a href="">FEATURES</a>
                     <a href="">PRICING</a>
@@ -37,7 +37,7 @@ function Nav() {
     } else {
         return(
             <header id="mobile-header">
-                <LogoSvg />
+                <LogoSvg className="logo-icon"  />
                 <button onClick={openNav}>
                     <HamburgerSvg />
                 </button>
