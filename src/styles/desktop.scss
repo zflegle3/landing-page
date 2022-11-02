@@ -96,7 +96,6 @@ $blue-sub-b-sh: rgba(37, 43, 70,0.90);
                 font-size: 1.3rem;
                 color: $blue-sub-b;
                 font-weight: 400;
-                // padding: 0rem 2rem;
                 letter-spacing: 0.2rem;
                 transition: color 0.3s;
                 text-decoration: none;
@@ -171,18 +170,24 @@ $blue-sub-b-sh: rgba(37, 43, 70,0.90);
                 // border-radius: 0.5rem;
                 padding: 1.5rem 2.5rem;
                 margin: 1rem 2rem 1rem 0rem;
+                cursor: pointer;
                 // box-shadow: 0rem 3px 5px $blue-sub-a-sh;
+                transition: 0.3s;
             }
         
-            // .btn-a {
-            //     background-color: $blue-main;
-            //     color: $bg-main;
-            // }
+            .btn-a:hover {
+                background-color: transparent;
+                color: $blue-main;
+                border: 2px solid $blue-main;
+                transition: 0.3s;
+            }
         
-            // .btn-b {
-            //     background-color: $bg-main;
-            //     color: $blue-sub-b;
-            // }
+            .btn-b:hover {
+                background-color: $bg-main;
+                color: $blue-sub-b;
+                border: 2px solid $blue-sub-b;
+                transition: 0.3s;
+            }
         }
 
         .container-main-b {
@@ -346,21 +351,23 @@ $blue-sub-b-sh: rgba(37, 43, 70,0.90);
                 padding: 2.25rem 3rem;
                 // text-decoration: none;
                 // cursor: pointer;
+                transition: border-bottom 0.3s;
             }
 
             // a:focus-visible, a:focus {
             //     outline: none;
             // }
 
-            // a:hover { 
-            //     color: $red-main;
-            //     cursor: pointer;
-            // }
+            a:hover { 
+                color: $red-main;
+                cursor: pointer;
+            }
 
-            // a.tab-select {
-            //     padding-bottom: 1.85rem;
-            //     border-bottom: 0.4rem solid $red-main;
-            // }
+            a.tab-select {
+                padding-bottom: 1.85rem;
+                border-bottom: 0.4rem solid $red-main;
+                transition: border-bottom 0.3s;
+            }
         }
 
         .features-content {
@@ -390,16 +397,8 @@ $blue-sub-b-sh: rgba(37, 43, 70,0.90);
                     border-radius: 0.5rem;
                     padding: 1.5rem 3rem;
                     box-shadow: 0rem 3px 5px $blue-sub-a-sh;
+                    cursor: pointer;
                 }
-                
-                // button {
-                //     border: none;
-                //     @include fontS();
-                //     border-radius: 0.5rem;
-                //     padding: 1.5rem;
-                //     margin: 0.5rem;
-                //     box-shadow: 0rem 3px 5px $blue-sub-a-sh;
-                // }
         
                 // .btn-a {
                 //     background-color: $blue-main;
@@ -519,13 +518,13 @@ $blue-sub-b-sh: rgba(37, 43, 70,0.90);
             //     text-align: center;
             // }
             
-            // button {
-            //     border: none;
-            //     @include fontS();
-            //     border-radius: 0.5rem;
-            //     padding: 1.5rem;
-            //     margin: 0.5rem;
-            //     box-shadow: 0rem 3px 5px $blue-sub-a-sh;
+            // button:hover {
+            //     // border: none;
+            //     // @include fontS();
+            //     // border-radius: 0.5rem;
+            //     // padding: 1.5rem;
+            //     // margin: 0.5rem;
+            //     // box-shadow: 0rem 3px 5px $blue-sub-a-sh;
             // }
     
             // .btn-a {
@@ -573,19 +572,26 @@ $blue-sub-b-sh: rgba(37, 43, 70,0.90);
             //     margin-bottom: 3rem;
             // }
 
-            // .card-btn-container {
-            //     padding: 2.5rem 0rem;
-            //     @include alignColCenter();
+            .card-btn-container {
+                // padding: 2.5rem 0rem;
+                // @include alignColCenter();
 
-            //     button {
-            //         @include fontS();
-            //         color: $bg-main;
-            //         background-color: $blue-main;
-            //         border: none;
-            //         border-radius: 0.5rem;
-            //         padding: 1.5rem 3rem;
-            //     }
-            // }
+                button {
+                    transition: 0.3s;
+                    cursor: pointer;
+                }
+
+                button:hover {
+                    @include fontS();
+                    color: $blue-main;
+                    background: transparent;
+                    // background-color: $blue-main;
+                    // border: none;
+                    // border-radius: 0.5rem;
+                    // padding: 1.5rem 3rem;
+                    transition: 0.3s;
+                }
+            }
 
             // .border-dot {
             //     width: 100%;
@@ -630,6 +636,7 @@ $blue-sub-b-sh: rgba(37, 43, 70,0.90);
                     // justify-content: space-between;
                     // align-items: center;
                     // padding: 1.5rem 0rem;
+                    transition: 0.3s;
 
                     h2 {
                         @include fontM();
@@ -637,6 +644,13 @@ $blue-sub-b-sh: rgba(37, 43, 70,0.90);
                         // color: $blue-sub-b;
                         // text-align: center;
                         // line-height: 3.6rem;
+                    }
+                }
+
+                .tab-title:hover {
+                    h2 {
+                        color: $red-main;
+                        transition: 0.3s;
                     }
                 }
 
@@ -678,21 +692,22 @@ $blue-sub-b-sh: rgba(37, 43, 70,0.90);
             }
         }
 
-        // .button-container {
-        //     display: flex;
-        //     justify-content: center;
-        //     align-items: center;
+        .button-container {
+            // display: flex;
+            // justify-content: center;
+            // align-items: center;
 
-        //     button {
-        //         @include fontS();
-        //         color: $bg-main;
-        //         background-color: $blue-main;
-        //         border: none;
-        //         border-radius: 0.5rem;
-        //         padding: 1.5rem 3rem;
-        //         box-shadow: 0rem 3px 5px $blue-sub-a-sh;
-        //     }
-        // }
+            button {
+                // @include fontS();
+                // color: $bg-main;
+                // background-color: $blue-main;
+                // border: none;
+                // border-radius: 0.5rem;
+                // padding: 1.5rem 3rem;
+                // box-shadow: 0rem 3px 5px $blue-sub-a-sh;
+                cursor: pointer;
+            }
+        }
 
     }
 
@@ -798,6 +813,14 @@ $blue-sub-b-sh: rgba(37, 43, 70,0.90);
 
                 margin-left: 1.5rem;
                 width: auto;
+                transition: 0.3s;
+                cursor: pointer;
+            }
+
+            button:hover {
+                color: $red-main;
+                background-color: $bg-main;
+                transition: 0.3s;
             }
         }
     }
@@ -847,8 +870,17 @@ $blue-sub-b-sh: rgba(37, 43, 70,0.90);
             @include alignRowCenter();
 
             svg {
-                fill: #ffffff;
                 margin: 2rem;
+                cursor: pointer;
+                path {
+                    fill: #ffffff;
+                    transition: 0.3s;
+                }
+            }
+
+            svg:hover path {
+                fill: $red-main;
+                transition: 0.3s;
             }
         }
     }

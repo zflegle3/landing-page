@@ -3,7 +3,7 @@ $bg-main: #ffffff;
 $txt-black: #000000;
 $blue-main: hsl(231, 69%, 60%);
 $red-main: hsl(0, 94%, 66%);
-$grey-main: rgb(210, 210, 210);
+$grey-main: rgb(240, 240, 240);
 $blue-sub-a: hsl(229, 8%, 60%);
 $blue-sub-b: hsl(229, 31%, 21%);
 //Shades
@@ -131,6 +131,7 @@ header.hide {
             padding: 1.5rem;
             margin: 0.5rem;
             box-shadow: 0rem 3px 5px $blue-sub-a-sh;
+            border: 2px solid transparent;
         }
     
         .btn-a {
@@ -139,7 +140,7 @@ header.hide {
         }
     
         .btn-b {
-            background-color: $bg-main;
+            background-color: $grey-main;
             color: $blue-sub-b;
         }
     }
@@ -300,11 +301,11 @@ header.hide {
             outline: none;
         }
 
-        a:hover { 
-            color: $red-main;
-            cursor: pointer;
-            transition: color 0.3s;
-        }
+        // a:hover { 
+        //     color: $red-main;
+        //     cursor: pointer;
+        //     transition: color 0.3s;
+        // }
 
         a.tab-select {
             padding-bottom: 1.85rem;
@@ -428,6 +429,7 @@ header.hide {
                 border: none;
                 border-radius: 0.5rem;
                 padding: 1.5rem 3rem;
+                border: 2px solid $blue-main;
             }
         }
 
@@ -476,13 +478,13 @@ header.hide {
                 }
             }
 
-            .tab-title:hover {
+            // .tab-title:hover {
 
-                h2 {
-                    color: $red-main;
-                    transition: color 0.3s;
-                }
-            }
+            //     h2 {
+            //         color: $red-main;
+            //         transition: color 0.3s;
+            //     }
+            // }
 
             .tab-content {
                 height: 0rem;
@@ -578,6 +580,10 @@ header.hide {
                 border-radius: 0.5rem;
             }
 
+            input {
+                outline: none;
+            }
+
             ::placeholder {
                 color: $blue-sub-a-sh;
             }
@@ -629,7 +635,9 @@ header.hide {
             background-color: $red-main;
             border: none;
             border-radius: 0.5rem;
-            padding: 1.5rem 3rem;
+            border: 2px solid $red-main;
+            padding: 1rem 3rem;
+            margin-top: 0.2rem;
             box-shadow: 0rem 3px 5px $blue-sub-a-sh;
         }
     }
@@ -665,7 +673,7 @@ footer {
         }
     }
 
-    .modal-footer {
+    .footer-icons {
         @include alignRowCenter();
 
         svg {
