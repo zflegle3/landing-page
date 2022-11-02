@@ -2,7 +2,7 @@
 
 [Live Demo Here!](https://zflegle3.github.io/landing-page)
 
-[Compare Solution with Design Here!](https://www.frontendmentor.io/challenges/bookmark-landing-page-5d0b588a9edda32581d29158/hub/bookmark-landing-page-XKdPVF3TXO)
+[Compare Solution with Design Here!](https://www.frontendmentor.io/solutions/responsive-landing-page-w-section-animations-reactsassgsap-OzZBH3KqLu)
 
 ## Summary
 
