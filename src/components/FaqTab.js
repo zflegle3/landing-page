@@ -13,7 +13,7 @@ function FaqTab(props) {
         setStatus(false);
     }
 
-    if (!status) { //closed state
+    if (!status) {//closed state
         return (
             <div id={`tab-item-${props.data.id}`} >
                 <div className="tab-title" onClick={handleOpen}>
@@ -36,9 +36,7 @@ function FaqTab(props) {
                 </div>
             </div>
         );
-
     }
-
 }
 
 export default FaqTab;

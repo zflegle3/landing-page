@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-
+//SVGs
 import { ReactComponent as LogoSvg } from '../images/logo-bookmark.svg';
 import { ReactComponent as HamburgerSvg } from '../images/icon-hamburger.svg';
-
+//Components
 import NavModal from "../components/NavModal"
 
 function Nav() {

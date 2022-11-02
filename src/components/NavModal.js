@@ -1,5 +1,5 @@
 import ReactDom from "react-dom";
-
+//SVGs
 import { ReactComponent as LogoSvg } from '../images/logo-bookmark.svg';
 import { ReactComponent as CloseSvg } from '../images/icon-close.svg';
 import { ReactComponent as FacebookSvg } from '../images/icon-facebook.svg';

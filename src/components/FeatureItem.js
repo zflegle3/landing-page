@@ -2,7 +2,7 @@
 function FeatureItem(props) {
     //props.tabData
 
-    let vw = window.screen.width;
+    let vw = window.innerWidth;
     if (vw <760) {
         return (
             <div className={`feature-item-${props.tabData.id}`}>
@@ -11,10 +11,12 @@ function FeatureItem(props) {
                     <div className="svg-hero-b"></div>
                     <div className="background-left"></div>
                 </div>
+
                 <div className="container-sub-a">
                     <h2>{props.tabData.title}</h2>
                     <p>{props.tabData.text}</p>
                 </div>
+
             </div>
         );
     } else {
@@ -25,11 +27,13 @@ function FeatureItem(props) {
                     <div className="svg-hero-b"></div>
                     <div className="background-left"></div>
                 </div>
+
                 <div className="container-sub-a">
                     <h2>{props.tabData.title}</h2>
                     <p>{props.tabData.text}</p>
                     <button>More Info</button>
                 </div>
+
             </div>
         );
 

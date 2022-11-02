@@ -327,7 +327,9 @@ header.hide {
 .features {
     padding: 2.5rem 0rem 5rem 0rem;
     width: 100%;
+    opacity: 0;
     @include alignColCenter();
+    transform: translateY(10rem);
 
     ul {
         padding: 0rem 4rem 4rem 4rem;
@@ -443,6 +445,8 @@ header.hide {
 
 .extensions {
     padding: 2.5rem 0rem 5rem 0rem;
+    opacity: 0;
+    transform: translateY(10rem);
 }
 
 .ext-card-container {
@@ -508,6 +512,8 @@ header.hide {
     @include alignColCenter();
     margin-bottom: 5rem;
     padding: 2.5rem 0rem 5rem 0rem;
+    opacity: 0;
+    transform: translateY(10rem);
 
     .dropdown-container {
         width: 100%;

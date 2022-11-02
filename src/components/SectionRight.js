@@ -1,6 +1,4 @@
 
-import { ReactComponent as HeroSvg } from "../images/illustration-hero.svg"
-
 function SectionRight() {
 
   return (

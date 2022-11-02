@@ -5,9 +5,13 @@ import {
     Link,
     Navigate
 } from "react-router-dom";
-import React, { useEffect } from 'react';
-
+import { useEffect } from 'react';
+//Components
 import FeatureItem from "../components/FeatureItem";
+//GSAP
+import gsap from "gsap";
+import {ScrollTrigger} from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 function Features() {
     
@@ -37,16 +41,30 @@ function Features() {
     }
 
     useEffect(() => {
-        //selects first tab on load
+        //selects first tab on page load
         let linksAll = document.querySelectorAll("#feature-tab");
         if (linksAll[0].className !== "tab-select") {
             linksAll[0].className =  "tab-select";
         }
     });
 
+    useEffect(() => {
+        gsap.to("#features", {
+            scrollTrigger: {
+                trigger: "#features",
+                start: "top 75%",
+                // markers: true,
+                toggleActions: "play none none none",
+            },
+            opacity: 1,
+            y: 0,
+            duration: 1
+        })
+    },[]);
+
 
     return (
-        <div className="features">
+        <div id="features" className="features">
             <div className="container-sub-a">
                 <h2>Features</h2>
                 <p>Our aim is to make it quick and easy for you to access your favorite websites. Your bookmarks sync between your devices so you can access then on the go.</p>

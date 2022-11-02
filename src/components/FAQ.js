@@ -1,6 +1,11 @@
+import { useEffect } from 'react';
 import { v4 as uuidv4 } from 'uuid';
-import React, { useState } from 'react';
-import FaqTab from "./FaqTab"
+//Components
+import FaqTab from "./FaqTab";
+//GSAP
+import gsap from "gsap";
+import {ScrollTrigger} from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 function FAQ(props) {
 
@@ -26,6 +31,20 @@ function FAQ(props) {
     let questionComps = tabInfo.map((questionData) =>
         <FaqTab key={uuidv4()} data={questionData}/>
     );
+
+    useEffect(() => {
+        gsap.to(".faq-container", {
+            scrollTrigger: {
+                trigger: ".faq-container",
+                start: "top 75%",
+                // markers: true,
+                toggleActions: "play none none none",
+            },
+            opacity: 1,
+            y: 0,
+            duration: 1
+        })
+    },[]);
 
     return (
         <div className="faq-container">

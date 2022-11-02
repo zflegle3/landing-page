@@ -1,5 +1,11 @@
+import { useEffect } from 'react';
 import { v4 as uuidv4 } from 'uuid';
+//Components
 import ExtCard from "./ExtCard"
+//GSAP
+import gsap from "gsap";
+import {ScrollTrigger} from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 function Download(props) {
 
@@ -21,6 +27,20 @@ function Download(props) {
     let extensionComps = tabInfo.map((extension) =>
         <ExtCard key={uuidv4()} data={extension}/>
     );
+
+    useEffect(() => {
+        gsap.to(".extensions", {
+            scrollTrigger: {
+                trigger: ".extensions",
+                start: "top 75%",
+                // markers: true,
+                toggleActions: "play none none none",
+            },
+            opacity: 1,
+            y: 0,
+            duration: 1
+        })
+    },[]);
 
   return (
     <div className="extensions">
